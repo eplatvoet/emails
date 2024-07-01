@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Example 5</title>
+
+    <style>
+        /* CLIENT-SPECIFIC STYLES */
+        #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+        .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+        body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+        table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+        img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+        /* RESET STYLES */
+        body{margin:0; padding:0;}
+        img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+        table{border-collapse:collapse !important;}
+        body{height:100% !important; margin:0; padding:0; width:100% !important;}
+        
+        /* BACK BUTTON - NOT APART OF EMAIL */
+        .back-button{
+            font-size:40px;
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            text-decoration: none;
+        }
+        
+        /* EMAIL SPECIFIC STYLES */
+        @media screen and (max-width: 750px) {
+            .back-button{
+                display:none !important;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .email-table{
+                width: 100% !important;
+                min-width:100% !important;
+            }
+            .img-max{
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+            .full-on-mobile{
+                width: 100% !important;
+                min-width: 100% !important;
+                display:block !important;
+            }
+            .mobile-padding{
+                padding: 10px 20px 10px 20px !important;
+            }
+            .center-align{
+                text-align:center !important;
+            }
+        }
+        @media screen and (max-width: 370px) {
+            .content-img{
+                width:100% !important;
+                min-width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- PREHEADER -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+    <tr align="center">
+        <td>
+        <!-- HIDDEN PREHEADER TEXT -->
+            <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+                &zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;
+            </div>
+        </td>
+    </tr>
+</table>
+
+<!-- TOP LINKS -->
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center" class="email-table">
+    <tr>
+        <td style="padding: 20px 30px;">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12px; line-height: 14px; color: #000000; text-align:center;" width="50%" class='full-on-mobile'>
+                        Missing Image? <a href="VIEW_IN_BROWSER_TOKEN" style="color: #3c7d52; text-decoration:underline;" target="_blank">View Online</a>
+                    </td>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12px; line-height: 14px; color: #000000; text-align:center;" width="50%" class="full-on-mobile m-pt-20">
+                        Click <a href="PI_LINK" style="color: #3c7d52; text-decoration:underline;" target="_blank">here</a> to visit our website
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- HEADER IMAGE -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="padding:0;">
+                        <img src="https://placehold.co/600x150" alt="Placeholder header image" class="img-max" style="display: block;">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: INTRO COPY -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="">
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 32px; color: #3c7d52; font-weight:bold; padding: 20px 20px 10px; text-align:center;">
+                        Did you hear?!
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; color: #000000; padding: 10px 20px 10px;">
+                        Hello,
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #000000; padding: 10px 20px 20px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum minima ratione id odio eligendi sit omnis autem culpa debitis, sequi asperiores officia soluta quidem magnam tempora in! 
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: 2 COLUMNS -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table" style="background-color:#3c7d52;" bgcolor="#3c7d52">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td align="center" style="width:37%;" class="full-on-mobile" valign="top">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="padding:20px 20px 20px 20px;" class="center-align">
+                                    <img src="https://placehold.co/200x300" alt="Placeholder image: content" class="content-img">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="center" style="width:60%;" class="full-on-mobile" valign="top">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="padding:20px 20px 0px 20px; font-family:Georgia, 'Times New Roman', Times, serif; font-size: 16px; line-height: 18px; color: #ffffff; font-weight:bold;" class="center-align">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis explicabo optio sunt distinctio? Aperiam voluptatibus quam repudiandae consectetur laudantium quasi asperiores, reprehenderit eum impedit molestiae fugiat. Eveniet sed accusamus voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ea esse quo dicta earum rerum ipsam dignissimos eos in quis cum soluta, nulla corrupti optio architecto vero. Assumenda, at illum? Praesentium, voluptate, odit enim nesciunt fugiat, minus quam voluptatibus vel reiciendis inventore similique dolore.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: SINGLE COLUMN -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #000000; padding: 20px 20px 10px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quasi fugiat impedit nostrum placeat illo cum. Aperiam eius molestiae dolore dolor laboriosam quae! Laudantium eligendi, aliquid pariatur cupiditate expedita cum.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #000000; padding: 10px 20px 20px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quos. Quam molestiae tempora corporis qui nihil. Sapiente, asperiores ad incidunt tempore beatae soluta ipsum? Velit minima hic dignissimos sed quasi. Aperiam pariatur ipsam cumque sunt labore ipsum nihil est in!
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: GRAY SECTION w/ CTA -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table" style="background-color:#d8d8d8;" bgcolor="#d8d8d8">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 18px; color: #3c7d52; font-weight:bold; text-align:center; padding: 20px 20px 10px;">
+                        Be sure to click the button below & enjoy a karaoke session!
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px 20px 20px; text-align: center;">
+                        <div>
+                            <!--[if mso]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://youtu.be/buUDZDiKtDs?si=xj6Bf3iMa9Lg_kfY" style="height:30pt;v-text-anchor:middle;width:150pt;" arcsize="10%" strokecolor="#ffffff" fillcolor="#556270">
+                                <w:anchorlock/>
+                                <center>
+                            <![endif]-->
+                            <a href="https://youtu.be/buUDZDiKtDs?si=xj6Bf3iMa9Lg_kfY" style="background-color:#556270;border:1px solid #ffffff;border-radius:4px;color:#ffffff;display:inline-block;font-family:sGeorgia, 'Times New Roman', Times, serif;font-size:13px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;" title="Cala the cat - 'I go meow' video on Youtube" alt="Cala the cat - 'I go meow' video on Youtube">Check out this video!</a>
+                            <!-- [if mso]>
+                                </center>
+                                </v:roundrect>
+                            <![endif]-->
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: SINGLE COLUMN CONTINUED -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #000000; padding: 20px 20px 10px;">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, minus mollitia cupiditate nisi non et laborum, sit esse velit, nesciunt adipisci dolorum aspernatur ex ipsam asperiores unde? Mollitia, repudiandae in! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur placeat architecto optio est reprehenderit dignissimos corporis, tempore tenetur obcaecati officia doloremque, voluptate, nesciunt neque! Maiores asperiores recusandae culpa perspiciatis harum?
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #000000; padding: 10px 20px 20px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quo, consequuntur assumenda placeat iste debitis neque odio quasi rerum sapiente! Iure, expedita! Corrupti adipisci eos quod exercitationem officia, totam cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore beatae dolore, voluptatum voluptates veritatis, facilis aut doloribus ipsam recusandae ea nostrum reiciendis? Explicabo tempore id, et iste illum ratione suscipit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis placeat nisi, quaerat error similique, tempore, sed cumque animi illum architecto fuga optio delectus officia ipsam veniam possimus quos inventore! Recusandae!
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: COLORBLOCK BULLET SECTION -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table" style="background-color:#d8d8d8;" bgcolor="#d8d8d8">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 20px 0 10px 20px;"  width='5' valign="top">
+                        &bull;
+                    </td>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 20px 20px 10px 10px;" valign="top">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 0 10px 20px;"  width='5' valign="top">
+                        &bull;
+                    </td>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 20px 10px 10px;" valign="top">
+                        Sunt necessitatibus expedita fugiat ex consequuntur, facilis provident obcaecati.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table" style="background-color:#d8d8d8;" bgcolor="#d8d8d8">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 0 10px 35px;"  width='5' valign="top">
+                        &mdash;
+                    </td>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 20px 10px 10px;" valign="top">
+                        Aut rem nisi quibusdam perspiciatis, velit vero cum voluptatum.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table" style="background-color:#d8d8d8;" bgcolor="#d8d8d8">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 0 10px 20px;"  width='5' valign="top">
+                        &bull;
+                    </td>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 20px 10px 10px;" valign="top">
+                        Voluptatibus, reiciendis qui explicabo unde labore aliquam quasi, magni omnis ad reprehenderit ut quo dolore officia.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 0 10px 20px;"  width='5' valign="top">
+                        &bull;
+                    </td>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 20px 10px 10px;" valign="top">
+                        Impedit blanditiis amet eligendi provident asperiores deserunt magnam obcaecati adipisci.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 0 10px 20px;"  width='5' valign="top">
+                        &bull;
+                    </td>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 20px 10px 10px;" valign="top">
+                        Non culpa veritatis neque ullam eligendi reprehenderit in aliquid error distinctio veniam, itaque odio quia ducimus earum iusto commodi, sunt aut.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 0 10px 20px;"  width='5' valign="top">
+                        &bull;
+                    </td>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 20px 10px 10px;" valign="top">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, laborum. Molestiae reprehenderit officia ducimus dolores ipsum! 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 0 20px 20px;"  width='5' valign="top">
+                        &bull;
+                    </td>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #3c7d52; padding: 0px 20px 20px 10px;" valign="top">
+                        Beatae possimus non tenetur, tempore doloremque velit itaque quod accusantium sit architecto, nesciunt delectus.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: CLOSING COPY -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #000000; padding: 20px 20px 10px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur architecto, corporis libero eos rerum sequi unde quas quod labore eaque recusandae est facilis laborum minima doloribus enim. Soluta, exercitationem itaque?
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #000000; padding: 10px 20px 0;">
+                        Keep an eye out for another email soon!
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 14px; line-height: 16px; color: #000000; padding: 0px 20px 20px;">
+                        &mdash;Erin
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- FOOTER -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color: #8dc8a1;" class="email-table" bgcolor="#8dc8a1">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="padding:40px 40px 0;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+                            <tr>
+                                <td style="padding:0;" align="left" valign="top" class="full-on-mobile center-align">
+                                    <a href="">
+                                        <img src="https://placehold.co/190x75" alt="Placeholder footer logo image">
+                                    </a>
+                                </td>
+                                <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12px; line-height: 16px; color: #000000; padding: 10px 20px 20px; text-align:right" align="right" valign="top" class="full-on-mobile center-align">
+                                    Company Name<br>
+                                    123 Main Street<br>
+                                    City Name, NJ 00000<br>
+                                    July 2024
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12px; line-height: 16px; color: white; padding: 20px 40px 40px; text-align:center">
+                        <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
+                            <tr>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://www.facebook.com">
+                                        <img src="./assets/email-images/facebook.png" alt="Facebook icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://x.com/">
+                                        <img src="./assets/email-images/twitter.png" alt="X (aka Twitter) icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://www.tiktok.com">
+                                        <img src="./assets/email-images/tiktok.png" alt="TikTok icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://www.linkedin.com">
+                                        <img src="./assets/email-images/linkedin.png" alt="LinkedIn icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://www.youtube.com">
+                                        <img src="./assets/email-images/youtube.png" alt="Youtube icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+<!-- BACK BUTTON - NOT APART OF EMAIL!! -->
+<a href='index.html' class="back-button">🔙</a>
+</body>
+</html>

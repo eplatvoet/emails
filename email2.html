@@ -6,12 +6,21 @@
     <title>Email Example 2</title>
 
     <style>
-        body{
-            margin:0;
-        }
-        table{
-            border-spacing: 0;
-        }
+        /* CLIENT-SPECIFIC STYLES */
+        #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+        .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+        body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+        table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+        img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+        /* RESET STYLES */
+        body{margin:0; padding:0;}
+        img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+        table{border-collapse:collapse !important;}
+        body{height:100% !important; margin:0; padding:0; width:100% !important;}
+        
+        /* BACK BUTTON - NOT APART OF EMAIL */
         .back-button{
             font-size:40px;
             position: fixed;
@@ -19,6 +28,8 @@
             left: 25px;
             text-decoration: none;
         }
+        
+        /* EMAIL SPECIFIC STYLES */
         @media screen and (max-width: 750px) {
             .back-button{
                 display:none;
@@ -42,10 +53,6 @@
             .center-align{
                 text-align:center;
             }
-            /* .content-container{
-                padding-left: 15px !important;
-                padding-right: 15px !important;
-            } */
         }
         @media screen and (max-width: 370px) {
             .content-img{

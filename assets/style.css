@@ -22,6 +22,7 @@ h3{
 }
 p{
     font-size: 1rem;
+    margin: 0;
 }
 .email-list-wrapper{
     display: flex;
@@ -47,7 +48,7 @@ p{
     height:auto;
 }
 .email-example .email-info-wrap{
-    padding:10px;
+    padding:10px 0 0;
     border-top:1px solid #999999;
 }
 

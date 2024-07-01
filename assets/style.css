@@ -1,0 +1,35 @@
+/* CSS FOR THE INDEX FILE ONLY */
+body{
+    background-color: #999999;
+    font-family: "Montserrat", sans-serif;
+}
+.content-wrapper{
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+
+}
+.email-list-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 20px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+.email-example{
+    width: 300px;
+}
+.email-example .email-img-wrap{
+    text-align: center;
+    padding-bottom:10px;
+}
+.email-example .email-img-wrap img{
+    width: 200px;
+    height:auto;
+}
+.email-example .email-info-wrap{
+    padding:10px;
+    border-top:1px solid #999999;
+}

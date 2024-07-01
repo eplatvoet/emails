@@ -19,7 +19,11 @@ body{
     border-radius: 10px;
 }
 .email-example{
-    width: 300px;
+    width:300px;
+    border: 1px solid #999999;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
 }
 .email-example .email-img-wrap{
     text-align: center;
@@ -32,4 +36,11 @@ body{
 .email-example .email-info-wrap{
     padding:10px;
     border-top:1px solid #999999;
+}
+
+@media screen and (max-width: 450px) {
+    .email-example .email-img-wrap img{
+        width:100%;
+        min-width: 100%;
+    }
 }

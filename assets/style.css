@@ -10,6 +10,19 @@ body{
     padding: 50px;
 
 }
+h1{
+    font-size:1.75rem;
+}
+span.no-break{
+    white-space: nowrap;
+}
+h3{
+    font-size:1.25rem;
+    font-weight: 400;
+}
+p{
+    font-size: 1rem;
+}
 .email-list-wrapper{
     display: flex;
     flex-wrap: wrap;
@@ -38,6 +51,11 @@ body{
     border-top:1px solid #999999;
 }
 
+@media screen and (max-width: 768px) {
+    h1{
+        text-align: center;
+    }
+}
 @media screen and (max-width: 450px) {
     .email-example .email-img-wrap img{
         width:100%;

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Example 6</title>
+
+    <style>
+        /* CLIENT-SPECIFIC STYLES */
+        #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+        .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+        body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+        table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+        img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+        /* RESET STYLES */
+        body{margin:0; padding:0;}
+        img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+        table{border-collapse:collapse !important;}
+        body{height:100% !important; margin:0; padding:0; width:100% !important;}
+        
+        /* BACK BUTTON - NOT APART OF EMAIL */
+        .back-button{
+            font-size: 40px;
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            text-decoration: none;
+        }
+        
+        /* EMAIL SPECIFIC STYLES */
+        @media screen and (max-width: 750px) {
+            .back-button{
+                display: none;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .email-table{
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+            .mobile-side{
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .img-max{
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+            .full-on-mobile{
+                width: 100% !important;
+                min-width: 100% !important;
+                display: block;
+            }
+            .mobile-padding{
+                padding: 10px 20px 10px 20px !important;
+            }
+            .center-align{
+                text-align: center !important;
+            }
+            .footer-padding{
+                padding: 10px 0 0 !important;
+            }
+        }
+        @media screen and (max-width: 370px) {
+            .content-img{
+                width: 100%;
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- PREHEADER -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+    <tr align="center">
+        <td>
+        <!-- HIDDEN PREHEADER TEXT -->
+            <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+                &zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;
+            </div>
+        </td>
+    </tr>
+</table>
+<!-- HEADER IMAGE -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="padding:0;">
+                        <img src="./assets/email-images/beach-full.jpg" alt="Placeholder header image" style="display: block; width:600px; max-width:600px;" class="img-max">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: INTRO COPY -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center" style="padding-left: 30px; padding-right: 30px;" class="mobile-side">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="">
+                <tr>
+                    <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 14px; color: #234468; padding: 20px 20px 10px;">
+                        Hello,
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 14px; line-height: 16px; color: #234468; padding: 10px 20px 20px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum minima ratione id odio eligendi sit omnis autem culpa debitis, sequi asperiores officia soluta quidem magnam tempora in! Enim, architecto soluta! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, illum! Perferendis, aliquam ab in dolore quis cupiditate quod consectetur cumque? Nesciunt, omnis possimus. Distinctio tempora similique amet nihil necessitatibus dolor!
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: COLORBLOCK CALLOUT SECTION -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table" style="background-color: #366ba3;" bgcolor="#366ba3">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 16px; line-height: 18px; color: #ffffff; padding: 20px 20px; text-align:center;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit! <br>
+                        Repudiandae, exercitationem consequatur! 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px 20px 20px; text-align:center;">
+                        <div>
+                            <!--[if mso]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://youtu.be/vPhg6sc1Mk4?si=r93NqNkKqWf9HbC_" style="height:30pt;v-text-anchor:middle;width:150pt;" arcsize="10%" strokecolor="#ffffff" fillcolor="#ffffff">
+                                <w:anchorlock/>
+                                <center>
+                            <![endif]-->
+                            <a href="https://youtu.be/vPhg6sc1Mk4?si=r93NqNkKqWf9HbC_" style="background-color:#ffffff;border:1px solid #ffffff;border-radius:4px;color:#234468;display:inline-block;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;" title="Ocean Sounds video on Youtube" alt="Ocean Sounds video on Youtube">Check out this video!</a>
+                            <!-- [if mso]>
+                                </center>
+                                </v:roundrect>
+                            <![endif]-->
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!-- EMAIL CONTENT: SINGLE COLUMN CONTINUED -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center" style="padding-left: 30px; padding-right: 30px;" class="mobile-side">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 14px; line-height: 16px; color: #234468; padding: 20px 20px 10px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, exercitationem consequatur. Nobis cum doloremque animi molestias eveniet alias esse id, ut dolorum possimus adipisci doloribus dolore, sit iste quidem corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, animi ad officiis maiores fuga autem ut impedit eos, adipisci, quod nobis ipsa quasi. Facere, pariatur architecto reiciendis impedit aspernatur voluptate!
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 14px; line-height: 16px; color: #234468; padding: 10px 20px;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus natus asperiores, a laboriosam maxime doloribus non odio saepe beatae tenetur quasi distinctio commodi possimus neque odit cum cupiditate excepturi quae?
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: TWO COLUMN  -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center" style="padding-left: 30px; padding-right: 30px;" class="mobile-side">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td align="center" style="width:35%; text-align:center" class="full-on-mobile" valign="top">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="padding:10px 0px 10px 20px; text-align: center;" class="mobile-padding center-align">
+                                    <img src="./assets/email-images/beach-chairs.jpg" width='175' style='width:175px; min-width:175px; max-width:175px;' alt="Beach chairs">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="center" style="width:60%; text-align: center;" class="full-on-mobile" valign="top">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="padding:10px 20px 10px 20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 14px; line-height: 16px; color: #234468; text-align: left;" class="mobile-padding">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum doloremque esse soluta minima dicta ullam placeat cum totam dolorem magni repellendus, sequi explicabo fugiat? Numquam quis tempore debitis adipisci quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ullam sequi commodi dolore rerum explicabo similique, modi quos, totam, ipsum nam odio nulla.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- EMAIL CONTENT: SINGLE COLUMN CONTINUED -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center" style="padding-left: 30px; padding-right: 30px;" class="mobile-side">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 14px; line-height: 16px; color: #234468; padding: 10px 20px 10px;">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae perspiciatis consequatur voluptatibus! 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 14px; line-height: 16px; color: #234468; padding: 10px 20px 0;">
+                        Keep an eye out for another email soon!
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 14px; line-height: 16px; color: #234468; padding: 0px 20px 40px;">
+                        &mdash;Erin
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- FOOTER -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color: #99badd;" class="email-table" bgcolor="#99badd">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="padding:40px 40px 0;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+                            <tr>
+                                <td style="padding:0;" align="left" valign="top" class="full-on-mobile center-align">
+                                    <a href="">
+                                        <img src="https://placehold.co/190x75" alt="Placeholder footer logo image">
+                                    </a>
+                                </td>
+                                <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 12px; line-height: 16px; color: #234468; padding: 10px 20px 20px; text-align:right" align="right" valign="top" class="full-on-mobile footer-padding center-align">
+                                    Company Name<br>
+                                    123 Main Street<br>
+                                    City Name, NJ 00000<br>
+                                    July 2024
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 12px; line-height: 16px; color: white; padding: 20px 40px 40px; text-align:center">
+                        <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
+                            <tr>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://www.facebook.com">
+                                        <img src="./assets/email-images/facebook.png" alt="Facebook icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://x.com/">
+                                        <img src="./assets/email-images/twitter.png" alt="X (aka Twitter) icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://www.tiktok.com">
+                                        <img src="./assets/email-images/tiktok.png" alt="TikTok icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://www.linkedin.com">
+                                        <img src="./assets/email-images/linkedin.png" alt="LinkedIn icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                                <td style="text-align:center; padding: 0 5px; width:40px;">
+                                    <a href="https://www.youtube.com">
+                                        <img src="./assets/email-images/youtube.png" alt="Youtube icon" style="width:40px; height:40px;">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<!-- BACK BUTTON - NOT APART OF EMAIL!! -->
+<a href='index.html' class="back-button">🔙</a>
+</body>
+</html>

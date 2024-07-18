@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Example 8</title>
+
+    <style>
+        /* CLIENT-SPECIFIC STYLES */
+        #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+        .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;} /* Force Hotmail to display normal line spacing */
+        body, table, td, a{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+        table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+        img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+        /* RESET STYLES */
+        body{margin:0; padding:0;}
+        img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+        table{border-collapse:collapse !important;}
+        body{height:100% !important; margin:0; padding:0; width:100% !important;}
+        
+        /* BACK BUTTON - NOT APART OF EMAIL */
+        .back-button{
+            font-size: 40px;
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            text-decoration: none;
+        }
+        
+        /* EMAIL SPECIFIC STYLES */
+        @media screen and (max-width: 750px) {
+            .back-button{
+                display: none;
+            }
+        }
+        /* MOBILE STYLES */
+        @media screen and (max-width: 600px) {
+            .desktop-only{
+                display: none !important;
+                mso-hide: all;
+            }
+            .responsive-table {
+                width: 100% !important;
+            }
+            .container{
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            img.img-max{
+                max-width: 100% !important;
+                width: 100% !important;
+                height:auto !important;
+            }
+            .mj-full-width-mobile {
+                width: 100% !important;
+                min-width: 100% !important;
+                display:block;
+            }
+            .m-pt-20{
+                padding-top:20px !important;
+            }
+            .m-no-side-padding{
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .cta-100p{
+                width:100% !important;
+            }
+            .phone-mob{
+                width:auto !important;
+                min-width:100px !important;
+                max-width:100px !important;
+            }
+            .app-icon-mob-td{
+                padding-bottom: 20px !important;
+            }
+            .app-icon-mob{
+                width:auto !important;
+                max-width:85px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- PREHEADER -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+    <tr align="center">
+        <td>
+        <!-- HIDDEN PREHEADER TEXT -->
+            <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+                &zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;&nbsp;&nbsp;&zwnj;&nbsp;
+            </div>
+        </td>
+    </tr>
+</table>
+
+<!-- HEADER IMAGE -->
+<table width="600" cellpadding="0" cellspacing="0" border="0" align="center" class="email-table">
+    <tr>
+        <td align="center">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td style="padding:0;">
+                        <img src="https://placehold.co/600x150" alt="Placeholder header image" class="img-max" style="display: block;">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<!-- MAIN COPY SECTION -->
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center" class="responsive-table">
+    <tr>
+        <td align="center" class="container" style="padding: 40px 30px">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 30px; line-height: 34px; text-align: center; color: #270d4d; font-weight:bold;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 40px 0 0">
+                        {{customText[Hello|Hi|Dear]}} {{customText[Dr|Mr|Mrs|Ms]}} {{customText[##accFname##|##accLname##|##accFname## ##accLname##}},
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 20px 0 0">
+                        {{customText[I'm looking forward to our visit next week. I wanted to send you some information in advance.|I am happy we were able to connect. Here's some more information about the topics we spoke about earlier.|It's been a while since we've connected. I wanted to make sure you had the latest information!]}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 20px 0 0;">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est cum quibusdam accusamus voluptate eum non amet nihil facere.<sup style="line-height: 1 !important; font-size: 75% !important; vertical-align: 30% !important; mso-text-raise: 30% !important; mso-line-height-rule:exactly !important;">1</sup> Vitae eius tenetur culpa minima pariatur asperiores quam quaerat, adipisci cum officia.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 20px 0 0">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem mollitia reiciendis vero non sapiente necessitatibus ipsam et impedit.<sup style="line-height: 1 !important; font-size: 75% !important; vertical-align: 30% !important; mso-text-raise: 30% !important; mso-line-height-rule:exactly !important;">2</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; color: #000000; padding: 20px 0 0; text-align:center;">
+                        <a href="" target="_blank">
+                            <img src="./assets/email-images/chart.png" alt="Graph with data" width="400" class="img-max">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; color: #000000; padding: 20px 0 0; text-align:center;">
+                        <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" rel="noopener" target="_blank" href="BUTTON_LINK" style="padding:0px 0; v-text-anchor:middle;min-width:241.5pt; width:241.5pt; max-height:38pt; height:38pt;" align="center" arcsize="10%" stroke="f" fillcolor="#270d4d">
+                            <w:anchorlock/>
+                            <center>
+                        <![endif]-->
+                        <a rel="noopener" target="_blank" href="BUTTON_LINK" style="background-color:#270d4d;border-radius:10px;color:#ffffff;display:inline-block;font-size: 16px; line-height:16px; padding: 16px 0; font-family:Arial, Helvetica, sans-serif; text-align:center;text-decoration:none; width:322px; -webkit-text-size-adjust:none; letter-spacing: 1px; text-transform: uppercase;" alt="Button: See clinical data" title="See clinical data" class="cta-100p">
+                           See clinical data
+                        </a>
+                        <!--[if mso]>
+                            </center>
+                            </v:roundrect>
+                        <![endif]-->
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 20px 0 0">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium consequatur iure error. Dignissimos sunt placeat omnis eos beatae ullam consectetur voluptate maxime, ut consequatur. Quam exercitationem alias ad dignissimos impedit.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 20px 0 0">
+                       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus commodi recusandae laudantium adipisci quos ducimus inventore!<sup style="line-height: 1 !important; font-size: 75% !important; vertical-align: 30% !important; mso-text-raise: 30% !important; mso-line-height-rule:exactly !important;">1,2</sup> 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 30px; line-height: 34px; text-align: center; color: #270d4d; padding: 20px 0 0; font-weight:bold;">
+                        Lorem ipsum adipisicing elit. 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 20px 0 0">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.<sup style="line-height: 1 !important; font-size: 75% !important; vertical-align: 30% !important; mso-text-raise: 30% !important; mso-line-height-rule:exactly !important;">2</sup> Quae impedit, cumque, officiis reprehenderit sint porro omnis ipsam in, a exercitationem sit? Odio inventore totam porro voluptates placeat et blanditiis itaque?
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; color: #000000; padding: 20px 0 0; text-align:center;">
+                        <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" rel="noopener" target="_blank" href="BUTTON_LINK" style="padding:0px 0; v-text-anchor:middle;min-width:241.5pt; width:241.5pt; max-height:38pt; height:38pt;" align="center" arcsize="10%" stroke="f" fillcolor="#270d4d">
+                            <w:anchorlock/>
+                            <center>
+                        <![endif]-->
+                        <a rel="noopener" target="_blank" href="BUTTON_LINK" style="background-color:#270d4d;border-radius:10px;color:#ffffff;display:inline-block;font-size: 16px; line-height:16px; padding: 16px 0; font-family:Arial, Helvetica, sans-serif; text-align:center;text-decoration:none; width:322px; -webkit-text-size-adjust:none; letter-spacing: 1px;" alt="WATCH VIDEO button" title="WATCH VIDEO button" class="cta-100p">
+                            WATCH VIDEO
+                        </a>
+                        <!--[if mso]>
+                            </center>
+                            </v:roundrect>
+                        <![endif]-->
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!-- ISI -->
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center" class="responsive-table" bgcolor="#f0e1fd" style="background-color: #f0e1fd">
+    <tr>
+        <td align="center" class="container" style="padding: 40px 30px">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; font-weight:bold; color: #270d4d">
+                        What is BLAHBLAHBLAH<sup style="line-height: 1 !important; font-size: 75% !important; vertical-align: 30% !important; mso-text-raise: 30% !important; mso-line-height-rule:exactly !important;">&reg;</sup>?
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding: 20px 0 0;">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores similique exercitationem sapiente at illum! Facere deserunt libero quo? Ab quidem delectus quam temporibus, odio id reprehenderit sequi quis a illo.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; font-weight:bold; color: #270d4d; padding: 20px 0 0;">
+                        IMPORTANT SAFETY INFORMATION
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; font-weight:bold; color: #270d4d; padding: 20px 0 0;">
+                        <em>Who should not receive BLAHBLAHBLAH?</em>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding: 20px 0 0;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio magnam omnis minus beatae possimus nulla in, officia dolore modi, eos vel ipsa rerum incidunt enim, eveniet sunt deleniti inventore accusamus:
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding: 0px 0 0 30px;">
+                        <table>
+                            <tr>
+                                <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d" valign="top" width="10">
+                                    &bull;
+                                </td>
+                                <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding-left: 5px;" valign="top">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut amet iusto obcaecati ipsam! Animi voluptas illo illum atque ea rem optio ipsa rerum laudantium? Aliquid sit exercitationem totam. Explicabo, magni!
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding: 0px 0 0 50px;">
+                        <table>
+                            <tr>
+                                <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d" valign="top" width="10">
+                                    &mdash;
+                                </td>
+                                <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding-left: 5px;" valign="top">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa natus et mollitia, ipsum iste alias at error dolorum odit quas possimus eum, aperiam laudantium? Reiciendis, blanditiis laudantium? Fuga, nisi optio.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d" valign="top" width="10">
+                                    &mdash;
+                                </td>
+                                <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding-left: 5px;" valign="top">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt perspiciatis laudantium quae sed animi vitae quo nostrum placeat amet culpa voluptatum eius voluptatem, quaerat accusantium itaque atque, alias blanditiis nobis?
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d" valign="top" width="10">
+                                    &mdash;
+                                </td>
+                                <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding-left: 5px;" valign="top">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium minus fugiat debitis, animi cum facilis perspiciatis voluptatem nostrum neque, alias ad laudantium blanditiis rem ipsa atque culpa deserunt reiciendis eius!
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; font-weight:bold; color: #270d4d; padding: 20px 0 0;">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis autem porro repellendus quibusdam amet, quod voluptas modi totam, saepe recusandae, veniam provident nesciunt eum culpa repudiandae cum reprehenderit asperiores praesentium!
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding: 20px 0 0;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla temporibus culpa quod quibusdam soluta similique et in! Repellat iste mollitia omnis impedit, fuga non hic corrupti deserunt eos ut quis.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; font-weight:bold; color: #270d4d; padding: 20px 0 0;">
+                        <em>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</em>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding: 20px 0 0;">
+                        <strong>Lorem ipsum dolor sit amet consectetur</strong> adipisicing elit. Tempora incidunt, ducimus at dolorum hic harum recusandae, ut debitis vel nulla possimus ab quisquam iure doloremque qui dolorem expedita. Recusandae, asperiores?
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding: 20px 0 0;">
+                        <strong>Lorem ipsum dolor</strong> sit amet consectetur adipisicing elit. Obcaecati, iste pariatur repudiandae est, possimus sit, laudantium dolores hic asperiores aperiam totam tempore sequi quos eius rerum fugit quaerat praesentium eos!
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding: 20px 0 0;">
+                        <strong>Lorem ipsum dolor sit amet</strong> consectetur adipisicing elit. Laboriosam, numquam architecto nam sit quis, ad voluptates unde quasi modi dolor obcaecati itaque dignissimos consectetur, dolorum blanditiis facere est aliquid aspernatur.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 27px; color: #270d4d; padding: 20px 0 0;">
+                        <strong>Lorem ipsum</strong> dolor sit amet consectetur adipisicing elit. Laboriosam, numquam architecto nam sit quis, ad voluptates unde quasi modi dolor obcaecati itaque dignissimos consectetur, dolorum blanditiis facere est aliquid aspernatur.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- CLOSING COPY -->
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center" class="responsive-table">
+    <tr>
+        <td align="center" class="container" style="padding: 40px 30px">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 20px 0 0">
+                        {{customText[Let me know if you have any questions leading up to our meeting. Looking forward to seeing you soon.|If you would like more information, or would like to schedule another meeting in near future, please let me know.|I am hoping we can meet soon to discuss this information. Please let me know if you have availability.]}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 20px 0 0">
+                        Sincerely,
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 20px 0 0">
+                        {{userName}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 0px 0 0">
+                        {{userEmailAddress}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 0px 0 0">
+                        Company_Name_here
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; color: #000000; padding: 0px 0 0">
+                        {{userPhoto}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 11px; line-height: 13px; color: #000000; padding: 40px 0px 0px;">
+                        <strong>References: 1.</strong> Lorem ipsum dolor, sit amet consectetur, <em>Adipisicing Elit</em>. 07022024. <span style='white-space: nowrap;'><strong>2.</strong> Illo</span> ad, placeat eaque voluptatem, facilis fuga, <em>Vel Consequuntur Ipsam Iure Rem, Corporis Consequatur Labore </em>. 07022024. 
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- FOOTER -->
+<table border="0" cellspacing="0" cellpadding="0" width="600" align="center" class="responsive-table" bgcolor="#270d4d" style="background-color: #270d4d">
+    <tr>
+        <td align="center" class="container" style="padding: 40px 30px 40px">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td style="text-align:center; padding: 0px 0 40px;">
+                        <a href="" target="_blank" style="text-decoration:none;">
+                            <img src="https://placehold.co/128x50" width="128" alt="">
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="" target="_blank" style="text-decoration:none;">
+                            <img src="https://placehold.co/128x50" width="128" alt="">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10px; line-height: 14px; text-align:center;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10px; line-height: 14px; text-align:center;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10px; line-height: 14px; text-align:center;">
+                        &copy; 2024 COMPANY NAME | All rights reserved.
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10px; line-height: 14px; text-align:center; padding: 20px 0 0;">
+                        You are receiving this email because our records indicate that you requested to receive emails about COMPANY_NAME. <br class="desktop-only">
+                        Please add <a href='mailto:email@email.com' style="text-decoration:underline; color:#f0e1fd" target="_blank">emailaddress@email.com</a> to your address book to ensure our emails reach your inbox. <br class="desktop-only">
+                        To unsubscribe from these communications, click <a href="{{unsubscribe_product_link}}"style="text-decoration:underline; color:#f0e1fd" target="_blank">here</a>.
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10px; line-height: 14px; text-align:center; padding: 20px 0 0;">
+                        07/24
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10px; line-height: 14px; text-align:center; padding: 40px 0 0px;">
+                        <a href="" style="color:#f0e1fd; text-decoration:underline; white-space: nowrap;" target="_blank">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" style="color:#f0e1fd; text-decoration:underline; white-space: nowrap;" target="_blank">Terms of Use</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" style="color:#f0e1fd; text-decoration:underline; white-space: nowrap;" target="_blank">COMPANY.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{unsubscribe_product_link}}" style="color:#f0e1fd; text-decoration:underline; white-space: nowrap;" target="_blank">Unsubscribe</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" style="color:#f0e1fd; text-decoration:underline; white-space: nowrap;" target="_blank">Contact Us</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="text-align:center; padding:40px 0 0;">
+                        <table align="center">
+                            <td align="center" style="text-align:center;">
+                                <table>
+                                    <tr>
+                                        <td align="center" style="font-family: Arial, Helvetica, sans-serif;text-align:center;">
+                                            <a href="https://www.instagram.com/" target="_blank">
+                                                <img src="./assets/email-images/instagram-white.png" alt="Instagram" width="43">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10px; line-height: 11px; text-align:center; padding-top:5px;">
+                                            <a href="https://www.instagram.com/" target="_blank" style="text-decoration:none; color:#ffffff">
+                                                INSTAGRAM
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td align="center" style="text-align:center; padding: 0 32px;">
+                                <table>
+                                    <tr>
+                                        <td align="center" style="font-family: Arial, Helvetica, sans-serif;text-align:center;">
+                                            <a href="https://www.facebook.com/" target="_blank">
+                                                <img src="./assets/email-images/facebook-white.png" alt="Facebook" width="43">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10px; line-height: 11px; text-align:center; padding-top:5px;">
+                                            <a href="https://www.facebook.com/" target="_blank" style="text-decoration:none; color:#ffffff">
+                                                FACEBOOK
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td align="center" style="text-align:center;">
+                                <table>
+                                    <tr>
+                                        <td align="center" style="font-family: Arial, Helvetica, sans-serif;text-align:center;">
+                                            <a href="https://www.youtube.com/" target="_blank">
+                                                <img src="./assets/email-images/youtube-white.png" alt="YouTube" width="43">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 10px; line-height: 11px; text-align:center; padding-top:5px;">
+                                            <a href="https://www.youtube.com/" target="_blank" style="text-decoration:none; color:#ffffff">
+                                                YOUTUBE
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

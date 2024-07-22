@@ -28,13 +28,13 @@
             left: 25px;
             text-decoration: none;
         }
-        
-        /* EMAIL SPECIFIC STYLES */
         @media screen and (max-width: 750px) {
             .back-button{
                 display: none;
             }
         }
+
+        /* EMAIL SPECIFIC STYLES */
         /* MOBILE STYLES */
         @media screen and (max-width: 600px) {
             .desktop-only{
@@ -55,7 +55,10 @@
             }
             .cta-100p{
                 width:100% !important;
-            }       
+            }   
+            .mobile-work-break{
+                word-break: break-all;
+            }    
         }
     </style>
 </head>
@@ -99,8 +102,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 40px 0 0">
-                        {{customText[Hello |Hi |Dear ]}} {{customText[Dr |Mr |Mrs |Ms ]}} {{customText[ ##accFname## | ##accLname## | ##accFname## ##accLname## }},
+                    <td style="font-family:Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #000000; padding: 40px 0 0;" class="mobile-work-break">
+                        {{customText[Hello|Hi|Dear]}} {{customText[Dr|Mr|Mrs|Ms]}} {{customText[##accFname##|##accLname##|##accFname## ##accLname##}},
                         <!-- SPACES MUST BE REMOVED AROUND CUSTOM TEXT OPTIONS - ONLY ADDED TO FIX MOBILE BUG -->
                     </td>
                 </tr>
